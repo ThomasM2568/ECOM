@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ECOM Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f4f7f6;
+      color: #333;
+    }
+
+    header {
+      padding: 40px 20px 10px;
+    }
+
+    header img {
+      width: 100px;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #F4A300;
+      margin-top: 10px;
+    }
+
+    .link-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+
+    .link-box {
+      width: 200px;
+      height: 200px;
+      background-color: #F4A300;
+      color: white;
+      font-size: 1.2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .link-box:hover {
+      transform: scale(1.1);
+      background-color: #c87d00;
+    }
+
+    footer {
+      padding: 40px 20px;
+      background-color: #fff;
+      border-top: 1px solid #ccc;
+    }
+
+    footer h2 {
+      margin-bottom: 10px;
+      color: #F4A300;
+    }
+
+    footer p {
+      margin: 4px 0;
+      font-size: 0.95em;
+    }
+
+    footer .hashtags {
+      margin-top: 12px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    @media (max-width: 700px) {
+      .link-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="ecom-logo.png" alt="ECOM Logo"> <!-- Replace with your actual logo filename -->
+    <h1>ECOM</h1>
+  </header>
+
+  <div class="link-container">
+    <a href="https://proxmox-kyllian.com/app/login" class="link-box" target="_blank">Application</a>
+    <a href="https://github.com/ThomasM2568/M1_IoT" class="link-box" target="_blank">GitHub (private)</a>
+    <a href="https://kdrive.infomaniak.com/app/share/1315199/2c768ca8-1459-448d-8c0a-28ac2aca07ea/files/11329" class="link-box" target="_blank">Project Files</a>
+  </div>
+
+  <footer>
+    <h2>ECOM</h2>
+    <p><strong>Electric Consumption Optimization and Monitoring</strong></p>
+    <p>Uendi Muca, Yohann Mitel, Kyllian Cuevas, Thomas Mirbey</p>
+    <div class="hashtags">
+      #IoT #HomeAutomation #EnergySavingSolution #SmartGrid #EnergyManagementSystem
+    </div>
+  </footer>
+
+</body>
+</html>
