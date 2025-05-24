@@ -1,32 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ECOM Project</title>
   <style>
+    :root {
+      --bg-light: #f4f7f6;
+      --bg-dark: #353c40;
+      --btn-light: #e37d12;
+      --btn-dark: #86e6e8;
+      --btn-hover-light: #b86300;
+      --btn-hover-dark: #5cd4d6;
+      --text-light: #333;
+      --text-dark: #f1f1f1;
+    }
+
+    [data-theme="light"] {
+      --bg-color: var(--bg-light);
+      --btn-color: var(--btn-light);
+      --btn-hover: var(--btn-hover-light);
+      --text-color: var(--text-light);
+      --logo-src: url('ecom-light.png');
+    }
+
+    [data-theme="dark"] {
+      --bg-color: var(--bg-dark);
+      --btn-color: var(--btn-dark);
+      --btn-hover: var(--btn-hover-dark);
+      --text-color: var(--text-dark);
+      --logo-src: url('ecom-dark.png');
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       text-align: center;
-      background-color: #f4f7f6;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      transition: background 0.3s, color 0.3s;
     }
 
     header {
       padding: 40px 20px 10px;
     }
 
-    header img {
+    header .logo {
       width: 100px;
       height: auto;
+      background-image: var(--logo-src);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
     }
 
-    h1 {
-      font-size: 2.5em;
-      color: #F4A300;
+    .theme-toggle {
       margin-top: 10px;
+      background: none;
+      border: 1px solid var(--text-color);
+      color: var(--text-color);
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9em;
     }
 
     .link-container {
@@ -40,8 +80,8 @@
     .link-box {
       width: 200px;
       height: 200px;
-      background-color: #F4A300;
-      color: white;
+      background-color: var(--btn-color);
+      color: #fff;
       font-size: 1.2em;
       display: flex;
       justify-content: center;
@@ -54,18 +94,18 @@
 
     .link-box:hover {
       transform: scale(1.1);
-      background-color: #c87d00;
+      background-color: var(--btn-hover);
     }
 
     footer {
       padding: 40px 20px;
-      background-color: #fff;
+      background-color: transparent;
       border-top: 1px solid #ccc;
     }
 
     footer h2 {
       margin-bottom: 10px;
-      color: #F4A300;
+      color: var(--btn-color);
     }
 
     footer p {
@@ -76,7 +116,18 @@
     footer .hashtags {
       margin-top: 12px;
       font-size: 0.9em;
-      color: #666;
+      color: var(--text-color);
+    }
+
+    .github-links a {
+      color: var(--btn-color);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    .github-links a:hover {
+      text-decoration: underline;
+      color: var(--btn-hover);
     }
 
     @media (max-width: 700px) {
@@ -90,24 +141,36 @@
 <body>
 
   <header>
-    <img src="ecom-logo.png" alt="ECOM Logo"> 
-    <h1>ECOM</h1>
+    <div class="logo"></div>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle theme</button>
   </header>
 
   <div class="link-container">
     <a href="https://proxmox-kyllian.com/app/login" class="link-box" target="_blank">Application</a>
     <a href="https://github.com/ThomasM2568/M1_IoT" class="link-box" target="_blank">GitHub (private)</a>
-    <a href="https://kdrive.infomaniak.com/app/share/1315199/2c768ca8-1459-448d-8c0a-28ac2aca07ea/files/11329" class="link-box" target="_blank">Project Files</a>
   </div>
 
   <footer>
     <h2>ECOM</h2>
     <p><strong>Electric Consumption Optimization and Monitoring</strong></p>
-    <p>Uendi Muca, Yohann Mitel, Kyllian Cuevas, Thomas Mirbey</p>
+    <p class="github-links">
+      <a href="https://github.com/UendiMuca" target="_blank">Uendi Muca</a> • 
+      <a href="https://github.com/YohannMitel" target="_blank">Yohann Mitel</a> • 
+      <a href="https://github.com/KyllianCuevas" target="_blank">Kyllian Cuevas</a> • 
+      <a href="https://github.com/ThomasM2568" target="_blank">Thomas Mirbey</a>
+    </p>
     <div class="hashtags">
       #IoT #HomeAutomation #EnergySavingSolution #SmartGrid #EnergyManagementSystem
     </div>
   </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      html.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
+    }
+  </script>
 
 </body>
 </html>
